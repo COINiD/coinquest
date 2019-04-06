@@ -1,0 +1,15 @@
+/* autoprefixer grid: autoplace */
+
+@import 'bourbon/core/_bourbon.scss'; // can be removed currently only uses for all inputs and all button types
+
+// base
+@import 'base/variables';
+@import 'base/layout';
+@import 'base/media';
+@import 'base/typography';
+
+
+// components
+@import "components/footer";
+@import "components/header";
+@import "components/layout";
