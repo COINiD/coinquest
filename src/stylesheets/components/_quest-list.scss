@@ -2,4 +2,14 @@ $margin-bottom: 104px;
 
 .quest-list {
   margin-bottom: $margin-bottom;
+
+  &__title {
+    font-weight: normal;
+  }
+
+  &--completed {
+    .quest-list__title {
+      color: $slight-gray;
+    }
+  }
 }

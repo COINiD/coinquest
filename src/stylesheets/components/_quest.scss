@@ -1,0 +1,129 @@
+$action-margin-desktop: 55px;
+$riddle-image-size-desktop: 105px;
+$riddle-image-size-mobile: 96px;
+$reward-padding: 20px;
+$icon-size: 20px;
+.quest {
+
+  &__reward {
+    border-radius: $base-border-radius;
+    background-color: $dark-gray;
+    max-width: 100%;
+    padding: $reward-padding;
+    font-weight: bold;
+    color: $black;
+    &__value {
+      color: $white;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $space-xxl;
+
+    @include media(medium) {
+      flex-direction: row;
+    }
+  }
+
+  &__action {
+    display: flex;
+    align-items: center;
+    margin-bottom: $space-l;
+    color: $white;
+    text-decoration: underline;
+
+    @include media(medium) {
+      margin-right: $action-margin-desktop;
+      margin-bottom: 0;
+    }
+
+    &__icon {
+      width: $icon-size;
+      height: $icon-size;
+      margin-right: $space-base;
+    }
+  }
+
+  &__riddles {
+    display: flex;
+    justify-content: space-between;
+
+    @include media(medium) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__riddle {
+    display: flex;
+    flex-direction: column;
+
+    @include media(medium) {
+      display: block;
+      margin-right: $action-margin-desktop;
+    }
+
+    &__image {
+      border-radius: $base-border-radius;
+      width: $riddle-image-size-mobile;
+      height: $riddle-image-size-mobile;
+      background-color: $secondary-background-color;
+
+      @include media(medium) {
+        width: $riddle-image-size-desktop;
+        height: $riddle-image-size-desktop;
+      }
+    }
+
+    &__title {
+      margin: $space-base 0 $space-xxs;
+      font-size: $font-size-small;
+      font-weight: normal;
+
+      &__no {
+        display: none;
+      }
+
+      &__no {
+        @include media(medium) {
+          display: inline;
+        }
+      }
+
+      @include media(medium) {
+        font-size: $font-size-regular;
+      }
+    }
+
+    &__unknown {
+      font-size: $font-size-mini;
+      color: $light-gray;
+
+      @include media(medium) {
+        font-size: $font-size-small;
+      }
+    }
+  }
+
+  &--completed {
+    .quest {
+      &__title {
+        text-decoration: line-through;
+      }
+      &__reward {
+        color: $white;
+      }
+    }
+  }
+  &--1 {
+    .quest {
+      &__title {
+        color: $pink;
+      }
+      &__reward {
+        background-color: $pink;
+      }
+    }
+  }
+}

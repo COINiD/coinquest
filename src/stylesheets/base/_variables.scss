@@ -12,9 +12,10 @@ $font-size-medium: 48px;
 $font-size-regular: 24px;
 $font-size-small: 20px;
 $font-size-tiny: 18px;
+$font-size-mini: 16px;
 
 // Vertical rhythm spacing
-$space-base: 10px;
+$space-base: 12px;
 $space-xxs: $space-base * 0.25;
 $space-xs: $space-base * 0.5;
 $space-s: $space-base * 0.75;
@@ -27,10 +28,16 @@ $white: rgb(255,255,255);
 $black: rgb(0,0,0);
 $gray: rgb(44, 45, 52);
 $medium-gray: rgb(119, 122,146);
-$light-gray: rgb(138, 138, 143);
+$light-gray: #777A94;
+$slight-gray: #8A8A8F;
 $lighter-gray: #FAFAFA;
+$dark-gray: #2C2D35;
 $purple: #617AF7;
+$pink: #E56ED5;
 
 // Background Colors
 $base-background-color: $black;
 $secondary-background-color: $medium-gray;
+
+
+$base-border-radius: 8px;
