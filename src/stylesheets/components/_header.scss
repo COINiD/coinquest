@@ -1,4 +1,32 @@
-header {
+$top-padding-mobile: 252px;
+$top-padding-desktop: 224px;
+$button-margin-mobile: $space-xxl*7;
+$button-margin-desktop: $space-xxl;
+
+.header {
   text-align: center;
-  padding: $space-xxl 0;
+  padding-top: $top-padding-mobile;
+
+  @include media(medium) {
+    padding-top: $top-padding-desktop;
+  }
+
+  &__button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: $button-margin-mobile;
+    padding: $space-s;
+    font-size: $font-size-small;
+
+    @include media(medium) {
+      margin-top: $button-margin-desktop;
+    }
+
+
+    &__icon {
+      margin-top: $space-s;
+    }
+  }
 }
