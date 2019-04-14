@@ -4,6 +4,9 @@ $button-margin-mobile: $space-xxl*7;
 $button-margin-desktop: $space-xxl;
 
 .header {
+  background-image: url('../images/bg-temp.png');
+  background-position: center top;
+  background-repeat: no-repeat;
   text-align: center;
   padding-top: $top-padding-mobile;
 
