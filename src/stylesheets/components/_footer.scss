@@ -1,15 +1,13 @@
-$top-padding-mobile: 120px;
-$top-padding-desktop: 158px;
-$bottom-padding-mobile: 80px;
+$padding-mobile: 120px;
+$padding-desktop: 158px;
 $logo-margin: 134px;
 
 .footer {
   background-color: $secondary-background-color;
-  padding-top: $top-padding-mobile;
-  padding-bottom: $bottom-padding-mobile;
+  padding: $padding-mobile 0;
 
   @include media(medium) {
-    padding-top: $top-padding-desktop;
+    padding: $padding-desktop 0;
     background-position: right bottom;
     background-repeat: no-repeat;
 

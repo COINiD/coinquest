@@ -7,21 +7,20 @@ export default [
       "Maecenas faucibus mollis interdum. Nullam quis risus eget urna mollis ornare vel eu leo.",
     ticker: "XMY",
     reward: "1000",
-    balance: null,
     qrImage: null,
     riddles: [
       {
-        image: null,
+        image: "image1.jpg",
         riddle: "Vad är det som går och går med aldrig kommer till dörren?",
         hint: "Donec id elit non mi porta gravida at eget metus."
       },
       {
-        image: null,
+        image: "image2.jpg",
         riddle: "2Vad är det som går och går med aldrig kommer till dörren?",
         hint: "Donec id elit non mi porta gravida at eget metus."
       },
       {
-        image: null,
+        image: "image3.jpg",
         riddle: "3Vad är det som går och går med aldrig kommer till dörren?",
         hint: "Donec id elit non mi porta gravida at eget metus."
       }
@@ -35,11 +34,10 @@ export default [
       "Maecenas faucibus mollis interdum. Nullam quis risus eget urna mollis ornare vel eu leo.",
     ticker: "XMY",
     reward: "999",
-    balance: null,
     qrImage: null,
     riddles: [
       {
-        image: null,
+        image: "image2.jpg",
         riddle: "Vad är det som går och går med aldrig kommer till dörren?",
         hint: "Donec id elit non mi porta gravida at eget metus."
       },
