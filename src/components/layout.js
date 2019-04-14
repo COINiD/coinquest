@@ -4,7 +4,7 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import "../stylesheets/master.scss";
 
-const Layout = ({ children, title, theme }) => {
+const Layout = ({ children, title, theme, isLoading }) => {
   let bodyClass;
   if (theme) {
     bodyClass = `${theme}-theme`;
@@ -29,7 +29,7 @@ const Layout = ({ children, title, theme }) => {
           as="style"
         />
       </Helmet>
-      <Header />
+      <Header isLoading={isLoading} />
       {children}
       <Footer />
     </>
