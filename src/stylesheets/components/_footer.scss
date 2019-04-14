@@ -10,12 +10,11 @@ $logo-margin: 134px;
 
   @include media(medium) {
     padding-top: $top-padding-desktop;
-    background-image: url('../images/phone.png');
     background-position: right bottom;
     background-repeat: no-repeat;
 
     &__copy {
-      max-width: 35%;
+      max-width: 75%;
     }
   }
 

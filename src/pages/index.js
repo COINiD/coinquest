@@ -48,7 +48,7 @@ export default class Page extends PureComponent {
 
     const renderQuests = (activeQuests, completedQuests) => {
       return (
-        <div className="quests" id="quests">
+        <div className="quests u-padding-top" id="quests">
           <QuestList title="Active quests" quests={activeQuests} />{" "}
           <QuestList
             title="Solved quests"
