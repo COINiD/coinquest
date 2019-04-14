@@ -1,3 +1,29 @@
-footer {
-  background-color: $light-gray;
+$top-padding-mobile: 120px;
+$top-padding-desktop: 158px;
+$bottom-padding-mobile: 80px;
+$logo-margin: 134px;
+
+.footer {
+  background-color: $secondary-background-color;
+  padding-top: $top-padding-mobile;
+  padding-bottom: $bottom-padding-mobile;
+
+  @include media(medium) {
+    padding-top: $top-padding-desktop;
+    background-image: url('../images/phone.png');
+    background-position: right bottom;
+    background-repeat: no-repeat;
+
+    &__copy {
+      max-width: 35%;
+    }
+  }
+
+  &__copy {
+    font-size: $font-size-small;
+  }
+
+  &__logo {
+    margin-top: $logo-margin;
+  }
 }

@@ -21,7 +21,7 @@ $button-margin-desktop: $space-xxl;
     justify-content: center;
     margin-top: $button-margin-mobile;
     padding: $space-s;
-    font-size: $font-size-small;
+    font-size: $font-size-tiny;
 
     @include media(medium) {
       margin-top: $button-margin-desktop;
