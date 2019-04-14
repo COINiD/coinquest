@@ -2,14 +2,15 @@ $top-padding-mobile: 252px;
 $top-padding-desktop: 224px;
 $button-margin-mobile: $space-xxl*7;
 $button-margin-desktop: $space-xxl;
+$header-height: 893px;
 
 .header {
-  background-image: url('../images/bg-temp.png');
+  background-image: url('../images/header-bg.svg');
   background-position: center top;
   background-repeat: no-repeat;
   text-align: center;
   padding-top: $top-padding-mobile;
-
+  min-height: $header-height;
   @include media(medium) {
     padding-top: $top-padding-desktop;
   }
