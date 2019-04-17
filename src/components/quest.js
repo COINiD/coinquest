@@ -1,9 +1,13 @@
 import React, { PureComponent } from "react";
 import Lightbox from "react-images";
 import classnames from "classnames";
+import { concat } from "lodash-es";
 import Actions from "./quest/actions";
 import Reward from "./quest/reward";
 import Riddles from "./quest/riddles";
+const imageComingSoon = require(`../images/quests/coming-soon.jpg`);
+
+const PRIVATE_KEY_INDEX = 3;
 
 export default class Quest extends PureComponent {
   constructor(props) {
@@ -16,7 +20,12 @@ export default class Quest extends PureComponent {
     this.state = {
       lightboxIsOpen: false,
       currentImage: 0,
-      images: this.imageList(riddles)
+      images: concat(this.imageList(riddles), [
+        {
+          src: imageComingSoon,
+          caption: `Private Key`
+        }
+      ])
     };
   }
 
@@ -29,7 +38,7 @@ export default class Quest extends PureComponent {
         };
       } else {
         return {
-          src: require(`../images/quests/coming-soon.jpg`),
+          src: imageComingSoon,
           caption: `Riddle no.${index + 1} - Coming soon`
         };
       }
@@ -70,7 +79,10 @@ export default class Quest extends PureComponent {
         <h2 className="quest__title">{title}</h2>
         <Reward completed={completed} reward={reward} ticker={ticker} />
         <p className="quest__description">{description}</p>
-        <Actions quest={quest} />
+        <Actions
+          onShowPrivateKey={() => this.openLightbox(PRIVATE_KEY_INDEX)}
+          onCopy={() => this.copyQuestLink()}
+        />
         <Riddles riddles={riddles} onClick={this.openLightbox.bind(this)} />
         <Lightbox
           images={images}
@@ -80,6 +92,7 @@ export default class Quest extends PureComponent {
           onClickNext={() => this.gotoNext()}
           onClose={() => this.closeLightbox()}
           backdropClosesModal={true}
+          width={768}
           showImageCount={false}
         />
       </div>

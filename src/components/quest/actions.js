@@ -2,10 +2,13 @@ import React from "react";
 import iconShare from "../../images/icon-share.svg";
 import iconQr from "../../images/icon-qr.svg";
 
-const Actions = ({ quest }) => {
+const Actions = ({ onCopy, onShowPrivateKey }) => {
   return (
     <div className="quest__actions">
-      <button className="quest__action quest__action--pk">
+      <button
+        className="quest__action quest__action--pk"
+        onClick={onShowPrivateKey}
+      >
         <img
           src={iconQr}
           alt="Private key"
@@ -15,7 +18,7 @@ const Actions = ({ quest }) => {
         />
         Private key
       </button>
-      <button className="quest__action quest__action--pk">
+      <button className="quest__action quest__action--pk" onClick={onCopy}>
         <img
           src={iconShare}
           alt="Share quest"
