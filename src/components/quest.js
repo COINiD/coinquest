@@ -11,6 +11,17 @@ export default class Quest extends PureComponent {
     currentImage: 0
   };
 
+  gotoPrevious() {
+    this.setState(state => ({
+      currentImage: state.currentImage - 1
+    }));
+  }
+  gotoNext() {
+    this.setState(state => ({
+      currentImage: state.currentImage + 1
+    }));
+  }
+
   openLightbox(index) {
     this.setState({ lightboxIsOpen: true, currentImage: index || 0 });
   }
@@ -20,7 +31,7 @@ export default class Quest extends PureComponent {
   }
 
   render() {
-    let { lightboxIsOpen } = this.state;
+    let { lightboxIsOpen, currentImage } = this.state;
     let { completed, quest } = this.props;
     let { id, description, title, reward, ticker, riddles } = quest;
 
@@ -28,13 +39,18 @@ export default class Quest extends PureComponent {
       "quest--completed": completed
     });
 
-    const lightboxImages = riddles.map(riddle => {
-      return (
-        riddle && {
-          src: `../../images/quests/${riddle.image}`,
+    const lightboxImages = riddles.map((riddle, index) => {
+      if (riddle) {
+        return {
+          src: require(`../images/quests/${riddle.image}`),
           caption: riddle.riddle
-        }
-      );
+        };
+      } else {
+        return {
+          src: require(`../images/quests/coming-soon.jpg`),
+          caption: `Riddle no.${index + 1} - Coming soon`
+        };
+      }
     });
 
     return (
@@ -47,8 +63,12 @@ export default class Quest extends PureComponent {
         <Lightbox
           images={lightboxImages}
           isOpen={lightboxIsOpen}
-          onClose={this.closeLightbox.bind(this)}
+          currentImage={currentImage}
+          onClickPrev={() => this.gotoPrevious()}
+          onClickNext={() => this.gotoNext()}
+          onClose={() => this.closeLightbox()}
           backdropClosesModal={true}
+          showImageCount={false}
         />
       </div>
     );
