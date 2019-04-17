@@ -2,6 +2,7 @@ import React, { PureComponent } from "react";
 import Lightbox from "react-images";
 import classnames from "classnames";
 import { concat } from "lodash-es";
+import Clipboard from "react-clipboard-polyfill";
 import Actions from "./quest/actions";
 import Reward from "./quest/reward";
 import Riddles from "./quest/riddles";
@@ -79,9 +80,17 @@ export default class Quest extends PureComponent {
         <h2 className="quest__title">{title}</h2>
         <Reward completed={completed} reward={reward} ticker={ticker} />
         <p className="quest__description">{description}</p>
-        <Actions
-          onShowPrivateKey={() => this.openLightbox(PRIVATE_KEY_INDEX)}
-          onCopy={() => this.copyQuestLink()}
+        <Clipboard
+          render={({ copyText }) => (
+            <Actions
+              onShowPrivateKey={() => this.openLightbox(PRIVATE_KEY_INDEX)}
+              onCopy={() =>
+                copyText(`${window.location.origin}#quest-${id}`).then(() => {
+                  console.log("Copied");
+                })
+              }
+            />
+          )}
         />
         <Riddles riddles={riddles} onClick={this.openLightbox.bind(this)} />
         <Lightbox
