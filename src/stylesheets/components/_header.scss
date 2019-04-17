@@ -5,9 +5,7 @@ $button-margin-desktop: $space-xxl;
 $header-height: 893px;
 
 .header {
-  background-image: url('../images/header-bg.svg');
-  background-position: center top;
-  background-repeat: no-repeat;
+  position: relative;
   text-align: center;
   padding-top: $top-padding-mobile;
   min-height: $header-height;
@@ -19,6 +17,11 @@ $header-height: 893px;
     .header__button {
       opacity: 0;
     }
+  }
+
+  .wrapper {
+    z-index: 100;
+    position: relative;
   }
 
   &__button {
@@ -39,6 +42,28 @@ $header-height: 893px;
 
     &__icon {
       margin-top: $space-s;
+    }
+  }
+
+  &__bg {
+    transition: opacity 1s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 10;
+
+    &--full {
+      opacity: 0;
+      z-index: 20;
+    }
+
+    &--fade-in {
+      opacity: 1;
     }
   }
 }
