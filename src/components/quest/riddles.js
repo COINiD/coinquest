@@ -6,7 +6,7 @@ const Riddles = ({ riddles, onClick }) => {
       <button
         className="quest__riddle"
         key={`riddle-${index}`}
-        onClick={() => onClick(index + 1)}
+        onClick={() => onClick(index)}
       >
         <div className="quest__riddle__image">
           {riddle && riddle.image && (

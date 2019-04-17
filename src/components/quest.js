@@ -6,9 +6,34 @@ import Reward from "./quest/reward";
 import Riddles from "./quest/riddles";
 
 export default class Quest extends PureComponent {
-  state = {
-    lightboxIsOpen: false,
-    currentImage: 0
+  constructor(props) {
+    super(props);
+
+    const {
+      quest: { riddles }
+    } = props;
+
+    this.state = {
+      lightboxIsOpen: false,
+      currentImage: 0,
+      images: this.imageList(riddles)
+    };
+  }
+
+  imageList = riddles => {
+    return riddles.map((riddle, index) => {
+      if (riddle) {
+        return {
+          src: require(`../images/quests/${riddle.image}`),
+          caption: riddle.riddle
+        };
+      } else {
+        return {
+          src: require(`../images/quests/coming-soon.jpg`),
+          caption: `Riddle no.${index + 1} - Coming soon`
+        };
+      }
+    });
   };
 
   gotoPrevious() {
@@ -16,6 +41,7 @@ export default class Quest extends PureComponent {
       currentImage: state.currentImage - 1
     }));
   }
+
   gotoNext() {
     this.setState(state => ({
       currentImage: state.currentImage + 1
@@ -31,7 +57,7 @@ export default class Quest extends PureComponent {
   }
 
   render() {
-    let { lightboxIsOpen, currentImage } = this.state;
+    let { lightboxIsOpen, currentImage, images } = this.state;
     let { completed, quest } = this.props;
     let { id, description, title, reward, ticker, riddles } = quest;
 
@@ -39,29 +65,15 @@ export default class Quest extends PureComponent {
       "quest--completed": completed
     });
 
-    const lightboxImages = riddles.map((riddle, index) => {
-      if (riddle) {
-        return {
-          src: require(`../images/quests/${riddle.image}`),
-          caption: riddle.riddle
-        };
-      } else {
-        return {
-          src: require(`../images/quests/coming-soon.jpg`),
-          caption: `Riddle no.${index + 1} - Coming soon`
-        };
-      }
-    });
-
     return (
-      <div className={classes}>
+      <div className={classes} id={`quest-${id}`}>
         <h2 className="quest__title">{title}</h2>
         <Reward completed={completed} reward={reward} ticker={ticker} />
         <p className="quest__description">{description}</p>
         <Actions quest={quest} />
         <Riddles riddles={riddles} onClick={this.openLightbox.bind(this)} />
         <Lightbox
-          images={lightboxImages}
+          images={images}
           isOpen={lightboxIsOpen}
           currentImage={currentImage}
           onClickPrev={() => this.gotoPrevious()}
