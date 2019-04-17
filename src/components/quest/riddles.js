@@ -1,12 +1,19 @@
 import React from "react";
 
-const Riddles = ({ riddles }) => {
+const Riddles = ({ riddles, onClick }) => {
   const renderRiddle = (riddle, index) => {
     return (
-      <a className="quest__riddle" href="#">
+      <button
+        className="quest__riddle"
+        key={`riddle-${index}`}
+        onClick={() => onClick(index + 1)}
+      >
         <div className="quest__riddle__image">
           {riddle && riddle.image && (
-            <img src={require(`../../images/quests/${riddle.image}`)} />
+            <img
+              src={require(`../../images/quests/${riddle.image}`)}
+              alt={riddle.hint}
+            />
           )}
         </div>
         <h3 className="quest__riddle__title">
@@ -16,7 +23,7 @@ const Riddles = ({ riddles }) => {
         {riddle === null && (
           <p className="quest__riddle__unknown">Coming soon</p>
         )}
-      </a>
+      </button>
     );
   };
   return (

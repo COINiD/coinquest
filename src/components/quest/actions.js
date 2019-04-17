@@ -5,7 +5,7 @@ import iconQr from "../../images/icon-qr.svg";
 const Actions = ({ quest }) => {
   return (
     <div className="quest__actions">
-      <a href="#" className="quest__action quest__action--pk">
+      <button className="quest__action quest__action--pk">
         <img
           src={iconQr}
           alt="Private key"
@@ -14,8 +14,8 @@ const Actions = ({ quest }) => {
           rel="preload"
         />
         Private key
-      </a>
-      <a href="#" className="quest__action quest__action--pk">
+      </button>
+      <button className="quest__action quest__action--pk">
         <img
           src={iconShare}
           alt="Share quest"
@@ -24,7 +24,7 @@ const Actions = ({ quest }) => {
           rel="preload"
         />
         Share quest
-      </a>
+      </button>
     </div>
   );
 };
