@@ -15,6 +15,7 @@ const Footer = () => (
       <p className="footer__copy">
         3. Use the sweep functionality of your wallet of choice. The private key
         is a BECH32 address. We recommend COINiD mobile wallet which supports
+        sweep private key of BECH32 addresses.
       </p>
       <p className="footer__copy">
         4. If the password is correct the coins available in the quest will be
