@@ -31,9 +31,8 @@ export default class Header extends PureComponent {
         <div className="wrapper">
           <h1 className="header__title">Coinquest</h1>
           <p className="header__caption">
-            En text om questen lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua.
+            Follow the clues, solve riddles and earn cryptocurrency. Only one
+            can be first, will it be you?
           </p>
           <a href="#quests" className="header__button">
             <span>View quests</span>

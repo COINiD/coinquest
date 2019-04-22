@@ -16,8 +16,15 @@ const Layout = ({ children, title, theme, isLoading }) => {
         <html lang="en" />
         <body className={bodyClass} />
         <meta property="og:url" content="https://coinquest.dev" />
-        <meta property="og:title" content="Coinquest by COINiD" />
-        <meta property="og:description" content="Some kind of og description" />
+        <meta
+          property="og:title"
+          content="Coinquest - Follow the quests in search for cryptocurrency."
+        />
+        <meta
+          property="og:description"
+          content="Follow the clues, solve riddles and earn cryptocurrency. Only one
+        can be first, will it be you?"
+        />
         <meta property="og:image" content="https://coinid.org/logo.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
