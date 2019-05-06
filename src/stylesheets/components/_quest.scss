@@ -2,8 +2,19 @@ $action-margin-desktop: 55px;
 $riddle-image-size-desktop: 105px;
 $riddle-image-size-mobile: 96px;
 $reward-padding: 20px;
+$qr-padding: 10px;
+
 $icon-size: 20px;
 .quest {
+  display: flex;
+  justify-content: flex-end;
+
+  &__side {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-left: $qr-padding;
+  }
 
   &__reward {
     border-radius: $base-border-radius;
@@ -14,6 +25,27 @@ $icon-size: 20px;
     color: $black;
     &__value {
       color: $white;
+    }
+  }
+
+  &__qr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $base-border-radius;
+    background-color: $white;
+    padding: $qr-padding;
+
+    &--cell {
+      opacity: 0.95;
+    }
+
+    &--cell-empty {
+      fill: $white;
+    }
+
+    &--cell-filled {
+      fill: $black;
     }
   }
 

@@ -2,12 +2,12 @@ export default [
   {
     id: 5,
     address: "my1qduytnyscv0q3uzxf4sr86qkvgjltxlsd60t7t3",
+    privateKey: "asjdfjkadxkufdsakndfkasdkhufkdas",
     title: "Sunset moon",
     description:
       "Maecenas faucibus mollis interdum. Nullam quis risus eget urna mollis ornare vel eu leo.",
     ticker: "XMY",
     reward: "1000",
-    qrImage: null,
     riddles: [
       {
         image: "image1.jpg",

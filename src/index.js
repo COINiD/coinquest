@@ -3,6 +3,7 @@ import { render } from "react-dom";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Front from "./pages/front";
 import Quest from "./pages/quest";
+import FourOhFour from "./pages/404";
 
 const rootElement = document.getElementById("root");
 
