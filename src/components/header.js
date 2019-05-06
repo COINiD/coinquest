@@ -29,7 +29,7 @@ export default class Header extends PureComponent {
     return (
       <header className={classes}>
         <div className="wrapper">
-          <h1 className="header__title">Coinquest</h1>
+          <h1 className="header__title">CoinQuest</h1>
           <p className="header__caption">
             Follow the clues, solve riddles and earn cryptocurrency. Only one
             can be first, will it be you?

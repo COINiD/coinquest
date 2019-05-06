@@ -18,7 +18,7 @@ const Layout = ({ children, title, theme, isLoading }) => {
         <meta property="og:url" content="https://coinquest.dev" />
         <meta
           property="og:title"
-          content="Coinquest - Follow the quests in search for cryptocurrency."
+          content="CoinQuest by COINiD - Follow the quests in search for cryptocurrency."
         />
         <meta
           property="og:description"

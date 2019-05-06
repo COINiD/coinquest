@@ -1,16 +1,12 @@
 import React from "react";
-import classnames from "classnames";
-import Quest from "./quest";
+import QuestListItem from "./quest-list-item";
 
-const QuestList = ({ title, quests, completed }) => {
-  let classes = classnames("quest-list", {
-    "quest-list--completed": completed
-  });
+const QuestList = ({ title, quests }) => {
   return (
-    <section className={classes}>
+    <section className="quest-list">
       <h3 className="quest-list__title">{title}</h3>
       {quests.map(quest => (
-        <Quest quest={quest} key={quest.id} completed={completed} />
+        <QuestListItem quest={quest} key={quest.id} />
       ))}
     </section>
   );
