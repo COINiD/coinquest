@@ -5,7 +5,7 @@ const Qr = ({ privateKey }) => (
   <a href={`coinid://sweep/${privateKey}`} className="quest__qr">
     <QRCode
       cellClassPrefix="quest__qr-"
-      level="Q"
+      level="L"
       style={{ width: 168 }}
       value={privateKey}
     />

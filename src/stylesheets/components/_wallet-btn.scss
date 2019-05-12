@@ -1,0 +1,26 @@
+.wallet-btn {
+  display: flex;
+  align-items: center;
+  border-radius: 19px;
+  border: 1px solid $white;
+  color: $white;
+  font-size: $font-size-minimini;
+  font-weight: 500;
+  line-height: 1;
+  height: 32px;
+  padding: 0 10px;
+
+  &__icon {
+    margin-left: 6px;
+  }
+
+  + .wallet-btn {
+    margin-left: 12px;
+  }
+
+  &:hover {
+    transition: all 0.15s ease-in;
+    text-decoration: none;
+    opacity: 0.7;
+  }
+}

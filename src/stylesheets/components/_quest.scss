@@ -2,7 +2,9 @@ $action-margin-desktop: 55px;
 $riddle-image-size-desktop: 105px;
 $riddle-image-size-mobile: 96px;
 $reward-padding: 20px;
-$qr-padding: 10px;
+$qr-padding: 15px;
+$side-padding: 56px;
+$side-width: 162px;
 
 $icon-size: 20px;
 .quest {
@@ -13,7 +15,14 @@ $icon-size: 20px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding-left: $qr-padding;
+    margin-bottom: 0;
+    max-width: $side-width;
+    font-size: $font-size-tiny;
+
+    @include media(medium) {
+      padding-left: $side-padding;
+      max-width: $side-padding + $side-width;
+    }
   }
 
   &__reward {
@@ -23,6 +32,7 @@ $icon-size: 20px;
     padding: $reward-padding;
     font-weight: bold;
     color: $black;
+
     &__value {
       color: $white;
     }
@@ -35,6 +45,7 @@ $icon-size: 20px;
     border-radius: $base-border-radius;
     background-color: $white;
     padding: $qr-padding;
+    margin-bottom: $space-base;
 
     &--cell {
       opacity: 0.95;
@@ -87,6 +98,10 @@ $icon-size: 20px;
       height: $icon-size;
       margin-right: $space-base;
     }
+  }
+
+  &__download {
+    display: flex;
   }
 
   &__riddles {
@@ -171,9 +186,11 @@ $icon-size: 20px;
       }
     }
   }
-  &--1 {
+
+  &--XMY {
     .quest {
-      &__title {
+      &__title,
+      &__download-title {
         color: $pink;
       }
       &__reward {
