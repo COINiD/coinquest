@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 import classnames from "classnames";
 import iconChevronsDown from "../images/icon-chevrons-down.svg";
 const bgFull = require("../images/header-bg.svg");
-const bgPreload = require("../images/header-bg-preload.png");
+const bgPreload = require("../images/header-bg-preload-low.png");
 
 export default class Header extends PureComponent {
   constructor(props) {
