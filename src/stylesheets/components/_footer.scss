@@ -34,8 +34,17 @@ $logo-margin: 134px;
     justify-content: center;
     align-items: center;
 
+    .wallet-btn + .wallet-btn {
+      margin-top: 12px;
+      margin-left: 0px;
+    }
+
     @include media(small) {
       flex-direction: row;
+      .wallet-btn + .wallet-btn {
+        margin-top: 0;
+        margin-left: 12px;
+      }
     }
   }
 

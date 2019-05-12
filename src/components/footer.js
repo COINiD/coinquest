@@ -19,7 +19,11 @@ const Footer = () => (
       <p className="footer__copy">
         3. Use the sweep functionality of your wallet of choice, the wallet must
         be able to sweep private keys with Bech32 addresses. We recommend{" "}
-        <a href="https://coinid.org/#download-now" target="_blank">
+        <a
+          href="https://coinid.org/#download-now"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           COINiD mobile wallet
         </a>{" "}
         which supports sweep private key of Bech32 addresses.

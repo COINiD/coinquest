@@ -8,8 +8,10 @@ $side-width: 162px;
 
 $icon-size: 20px;
 .quest {
-  display: flex;
-  justify-content: flex-end;
+  @include media(medium) {
+    display: flex;
+    justify-content: flex-end;
+  }
 
   &__side {
     display: flex;
@@ -23,6 +25,21 @@ $icon-size: 20px;
       padding-left: $side-padding;
       max-width: $side-padding + $side-width;
     }
+
+    &--mobile {
+      margin-bottom: $space-xxl;
+      @include media(medium) {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include media(medium) {
+        display: flex;
+      }
+    }
   }
 
   &__reward {
@@ -34,7 +51,14 @@ $icon-size: 20px;
     color: $black;
 
     &__value {
+      display: block;
       color: $white;
+    }
+
+    @include media(small) {
+      .quest__reward__value {
+        display: inline;
+      }
     }
   }
 

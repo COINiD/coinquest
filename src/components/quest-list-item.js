@@ -18,6 +18,10 @@ export default class QuestListItem extends PureComponent {
           <h2 className="quest__title">{title}</h2>
           <Reward reward={reward} ticker={ticker} />
           <p className="quest__description">{description}</p>
+          <p className="quest__side quest__side--mobile">
+            <Qr privateKey={privateKey} />
+            Private key
+          </p>
           <h4 className="quest__download-title">
             Download {coinNames[ticker]} Wallet
           </h4>
@@ -26,7 +30,7 @@ export default class QuestListItem extends PureComponent {
             <WalletButton ticker={ticker} system="ios" />
           </div>
         </div>
-        <p className="quest__side">
+        <p className="quest__side quest__side--desktop">
           <Qr privateKey={privateKey} />
           Private key
         </p>
