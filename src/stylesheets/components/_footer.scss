@@ -3,7 +3,11 @@ $padding-desktop: 158px;
 $logo-margin: 134px;
 
 .footer {
-  background-color: $secondary-background-color;
+  background: linear-gradient(
+    180deg,
+    $secondary-background-color 26.04%,
+    $black 75.52%
+  );
   padding: $padding-mobile 0 0;
 
   @include media(medium) {
