@@ -4,10 +4,10 @@ $logo-margin: 134px;
 
 .footer {
   background-color: $secondary-background-color;
-  padding: $padding-mobile 0;
+  padding: $padding-mobile 0 0;
 
   @include media(medium) {
-    padding: $padding-desktop 0;
+    padding: $padding-desktop 0 0;
     background-position: right bottom;
     background-repeat: no-repeat;
 
@@ -18,9 +18,30 @@ $logo-margin: 134px;
 
   &__copy {
     font-size: $font-size-small;
+
+    a {
+      color: $black;
+    }
+  }
+
+  &__downloads {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include media(small) {
+      flex-direction: row;
+    }
   }
 
   &__logo {
-    margin-top: $logo-margin;
+    display: flex;
+    justify-content: center;
+    margin: $space-l 0 $space-xxl;
+  }
+
+  &__bg {
+    display: block;
   }
 }

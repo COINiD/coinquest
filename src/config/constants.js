@@ -10,6 +10,10 @@ export const coinNames = {
 };
 
 export const walletUrls = {
+  ALL: {
+    android: "https://play.google.com/store/apps/developer?id=COINiD+Group",
+    ios: "https://itunes.apple.com/us/developer/coinid-ab/id1447953434"
+  },
   BTC: {
     android:
       "https://play.google.com/store/apps/details?id=org.coinid.wallet.btc",

@@ -1,4 +1,7 @@
 import React from "react";
+import WalletButton from "../components/wallet-button";
+import logo from "../images/coinid-logo.svg";
+import footerBg from "../images/footer-bg.png";
 
 const Footer = () => (
   <footer className="footer">
@@ -25,6 +28,19 @@ const Footer = () => (
         4. If the password is correct the coins available in the quest will be
         directly transferred to your wallet.
       </p>
+      <p className="footer__downloads">
+        <WalletButton system="ios" />
+        <WalletButton system="android" />
+      </p>
+      <a href="https://coinid.org" className="footer__logo">
+        <img src={logo} alt="COINiD Logo" title="Visit COINiD.org" />
+      </a>
+      <img
+        src={footerBg}
+        alt="iPhone with apps"
+        title="iPhone with apps"
+        className="footer__bg"
+      />
     </div>
   </footer>
 );

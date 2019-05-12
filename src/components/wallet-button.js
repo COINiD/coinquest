@@ -4,10 +4,19 @@ import iconIos from "../images/icon-app-store.svg";
 import iconAndroid from "../images/icon-play-store.svg";
 
 const WalletButton = ({ ticker, system }) => {
-  let { ios: iosUrl, android: androidUrl } = walletUrls[ticker];
-  let url = system === "android" ? androidUrl : iosUrl;
-  let title = system === "android" ? "Google Play" : "App Store";
+  let title = "Download the apps";
+
+  if (ticker === undefined) {
+    ticker = "ALL";
+  } else {
+    title = system === "android" ? "Google Play" : "App Store";
+  }
+
+  let { android: urlAndroid, ios: urlIos } = walletUrls[ticker];
+
   let icon = system === "android" ? iconAndroid : iconIos;
+  let url = system === "android" ? urlAndroid : urlIos;
+
   return (
     <a
       href={url}
