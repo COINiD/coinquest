@@ -4,7 +4,7 @@ import Layout from "../components/layout";
 import { insights } from "../config/constants";
 import quests from "../config/quests";
 
-export default function withQuests(WrappedComponent) {
+export default function withQuests(WrappedComponent, simpleHeader) {
   return class extends Component {
     state = {
       activeQuests: [],
@@ -49,7 +49,12 @@ export default function withQuests(WrappedComponent) {
         return <div className="loading">Loading...</div>;
       };
       return (
-        <Layout title="CoinQuest" theme="dark" isLoading={isLoading}>
+        <Layout
+          title="CoinQuest"
+          theme="dark"
+          isLoading={isLoading}
+          simpleHeader={simpleHeader}
+        >
           <div className="wrapper">
             {isLoading ? (
               renderLoader()

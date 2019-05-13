@@ -1,8 +1,10 @@
 $top-padding-mobile: 234px;
 $top-padding-desktop: 224px;
-$button-margin-mobile: $space-xxl*5;
+$button-margin-mobile: $space-xxl * 5;
 $button-margin-desktop: $space-xxl;
 $header-height: 893px;
+$top-padding-simple: 32px;
+$bottom-padding-simple: 64px;
 
 .header {
   position: relative;
@@ -17,6 +19,11 @@ $header-height: 893px;
     .header__button {
       opacity: 0;
     }
+  }
+
+  &--simple {
+    padding: $top-padding-simple 0 $bottom-padding-simple;
+    min-height: 0;
   }
 
   .wrapper {
@@ -38,7 +45,6 @@ $header-height: 893px;
     @include media(medium) {
       margin-top: $button-margin-desktop;
     }
-
 
     &__icon {
       margin-top: $space-s;

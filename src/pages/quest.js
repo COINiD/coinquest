@@ -18,4 +18,4 @@ class Page extends PureComponent {
   }
 }
 
-export default withQuests(Page);
+export default withQuests(Page, true);
