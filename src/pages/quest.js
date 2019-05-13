@@ -1,12 +1,20 @@
 import React, { PureComponent } from "react";
 import withQuests from "../enhancers/quests";
-import Quest from "../components/quest";
+import QuestList from "../components/quest-list";
 
 class Page extends PureComponent {
   render() {
     let { activeQuests } = this.props;
 
-    return <Quest quest={activeQuests[0]} />;
+    return (
+      <div className="quests u-padding-top">
+        <QuestList
+          title="Riddles for"
+          quests={[activeQuests[0]]}
+          withRiddles={true}
+        />
+      </div>
+    );
   }
 }
 

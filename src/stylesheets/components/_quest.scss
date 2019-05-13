@@ -7,10 +7,14 @@ $side-padding: 56px;
 $side-width: 162px;
 
 $icon-size: 20px;
+
+$margin-bottom: 104px;
+
 .quest {
+  margin-bottom: $margin-bottom;
+
   @include media(medium) {
     display: flex;
-    justify-content: flex-end;
   }
 
   &__side {

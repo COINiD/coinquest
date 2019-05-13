@@ -1,109 +1,41 @@
 import React, { PureComponent } from "react";
-import Lightbox from "react-images";
 import classnames from "classnames";
-import { concat } from "lodash-es";
-import Clipboard from "react-clipboard-polyfill";
-import Actions from "./quest/actions";
+import { coinNames } from "../config/constants";
 import Reward from "./quest/reward";
 import Riddles from "./quest/riddles";
-const imageComingSoon = require(`../images/quests/coming-soon.jpg`);
+import Qr from "./quest/qr";
+import WalletButton from "./wallet-button";
 
-const PRIVATE_KEY_INDEX = 3;
-
-export default class Quest extends PureComponent {
-  constructor(props) {
-    super(props);
-
-    const {
-      quest: { riddles }
-    } = props;
-
-    this.state = {
-      lightboxIsOpen: false,
-      currentImage: 0,
-      images: concat(this.imageList(riddles), [
-        {
-          src: imageComingSoon,
-          caption: `Private Key`
-        }
-      ])
-    };
-  }
-
-  imageList = riddles => {
-    return riddles.map((riddle, index) => {
-      if (riddle) {
-        return {
-          src: require(`../images/quests/${riddle.image}`),
-          caption: riddle.riddle
-        };
-      } else {
-        return {
-          src: imageComingSoon,
-          caption: `Riddle no.${index + 1} - Coming soon`
-        };
-      }
-    });
-  };
-
-  gotoPrevious() {
-    this.setState(state => ({
-      currentImage: state.currentImage - 1
-    }));
-  }
-
-  gotoNext() {
-    this.setState(state => ({
-      currentImage: state.currentImage + 1
-    }));
-  }
-
-  openLightbox(index) {
-    this.setState({ lightboxIsOpen: true, currentImage: index || 0 });
-  }
-
-  closeLightbox() {
-    this.setState({ lightboxIsOpen: false });
-  }
-
+export default class QuestListItem extends PureComponent {
   render() {
-    let { lightboxIsOpen, currentImage, images } = this.state;
-    let { completed, quest } = this.props;
-    let { id, description, title, reward, ticker, riddles } = quest;
+    let { quest, withRiddles } = this.props;
+    let { id, description, title, reward, ticker, privateKey, riddles } = quest;
 
-    let classes = classnames("quest", `quest--${id}`, {
-      "quest--completed": completed
-    });
+    let classes = classnames("quest", `quest--${id}`, `quest--${ticker}`);
 
     return (
       <div className={classes} id={`quest-${id}`}>
-        <h2 className="quest__title">{title}</h2>
-        <Reward completed={completed} reward={reward} ticker={ticker} />
-        <p className="quest__description">{description}</p>
-        <Clipboard
-          render={({ copyText }) => (
-            <Actions
-              onShowPrivateKey={() => this.openLightbox(PRIVATE_KEY_INDEX)}
-              onCopy={() =>
-                copyText(`${window.location.origin}#quest-${id}`).then(() => {
-                  console.log("Copied");
-                })
-              }
-            />
-          )}
-        />
-        <Riddles riddles={riddles} onClick={this.openLightbox.bind(this)} />
-        <Lightbox
-          images={images}
-          isOpen={lightboxIsOpen}
-          currentImage={currentImage}
-          onClickPrev={() => this.gotoPrevious()}
-          onClickNext={() => this.gotoNext()}
-          onClose={() => this.closeLightbox()}
-          backdropClosesModal={true}
-          width={768}
-          showImageCount={false}
-        />
+        <div className="quest__content">
+          <h2 className="quest__title">{title}</h2>
+          <Reward reward={reward} ticker={ticker} />
+          <p className="quest__description">{description}</p>
+          {withRiddles && <Riddles riddles={riddles} />}
+          <p className="quest__side quest__side--mobile">
+            <Qr privateKey={privateKey} />
+            Private key
+          </p>
+          <h4 className="quest__download-title">
+            Download {coinNames[ticker]} Wallet
+          </h4>
+          <div className="quest__download">
+            <WalletButton ticker={ticker} system="android" />
+            <WalletButton ticker={ticker} system="ios" />
+          </div>
+        </div>
+        <p className="quest__side quest__side--desktop">
+          <Qr privateKey={privateKey} />
+          Private key
+        </p>
       </div>
     );
   }

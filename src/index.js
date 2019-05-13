@@ -12,7 +12,8 @@ function App() {
     <Router>
       <div>
         <Route exact path="/" component={Front} />
-        <Route exact path="/quest/:questId" component={QuestRoute} />
+        <Route exact path="/quests/:questId" component={QuestRoute} />
+        <Route component={FourOhFour} />
       </div>
     </Router>
   );

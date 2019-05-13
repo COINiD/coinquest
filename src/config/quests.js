@@ -28,7 +28,8 @@ export default [
   },
   {
     id: 1,
-    address: "4xSPL1LNWUCGjAE3ZBZmTbZ91tUTy5AZPD",
+    address: "MW25FEGZTTM7agrH2bES16t6Vqg4NuZ7UF",
+    privateKey: "asjdfjkadxkufdsakndfkasdkhufkdas",
     title: "Hunt for red october",
     description:
       "Maecenas faucibus mollis interdum. Nullam quis risus eget urna mollis ornare vel eu leo.",
