@@ -1,17 +1,28 @@
 import React, { PureComponent } from "react";
+import { Redirect } from "react-router";
+import { find } from "lodash-es";
 import withQuests from "../enhancers/quests";
 import QuestList from "../components/quest-list";
 
 class Page extends PureComponent {
   render() {
-    let { activeQuests } = this.props;
+    let { activeQuests, completedQuests, questId } = this.props;
+
+    let active = find(activeQuests, { address: questId });
+    let completed = find(completedQuests, { address: questId });
+
+    let quest = active || completed;
+    if (!quest) {
+      return <Redirect to="/404" />;
+    }
 
     return (
       <div className="quests u-padding-top">
         <QuestList
           title="Riddles for"
-          quests={[activeQuests[0]]}
+          quests={[quest]}
           withRiddles={true}
+          completed={completed}
         />
       </div>
     );

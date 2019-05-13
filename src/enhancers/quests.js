@@ -43,6 +43,7 @@ export default function withQuests(WrappedComponent, simpleHeader) {
     };
 
     render() {
+      const { questId } = this.props;
       const { isLoading, activeQuests, completedQuests } = this.state;
 
       const renderLoader = () => {
@@ -63,6 +64,7 @@ export default function withQuests(WrappedComponent, simpleHeader) {
                 activeQuests={activeQuests}
                 completedQuests={completedQuests}
                 isLoading={isLoading}
+                questId={questId}
               />
             )}
           </div>
