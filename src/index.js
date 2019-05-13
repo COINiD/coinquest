@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Front from "./pages/front";
 import Quest from "./pages/quest";
 import FourOhFour from "./pages/404";
@@ -11,9 +11,11 @@ function App() {
   return (
     <Router>
       <div>
-        <Route exact path="/" component={Front} />
-        <Route exact path="/quests/:questId" component={QuestRoute} />
-        <Route component={FourOhFour} />
+        <Switch>
+          <Route exact path="/" component={Front} />
+          <Route exact path="/quests/:questId" component={QuestRoute} />
+          <Route exact path="*" component={FourOhFour} />
+        </Switch>
       </div>
     </Router>
   );
