@@ -1,2 +1,5 @@
 http://coinquest.netlify.com/* https://coinquest.dev/:splat 301!
 https://coinquest.netlify.com/* https://coinquest.dev/:splat 301!
+
+/quests/* /index.html 200
+/404 /index.html 404
