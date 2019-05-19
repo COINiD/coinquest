@@ -23,13 +23,17 @@ body {
 
 @mixin media($canvas) {
   @if $canvas == small {
-   @media only screen and (min-width: $small) { @content; }
-  }
-  @else if $canvas == medium {
-   @media only screen and (min-width: $medium) { @content; }
-  }
-  @else if $canvas == large {
-   @media only screen and (min-width: $large) { @content; }
+    @media only screen and (min-width: $small) {
+      @content;
+    }
+  } @else if $canvas == medium {
+    @media only screen and (min-width: $medium) {
+      @content;
+    }
+  } @else if $canvas == large {
+    @media only screen and (min-width: $large) {
+      @content;
+    }
   }
 }
 
@@ -55,4 +59,8 @@ body {
 
 .u-padding-top {
   padding-top: $space-l;
+}
+
+.u-margin-bottom {
+  margin-bottom: $space-xxl * 3;
 }
