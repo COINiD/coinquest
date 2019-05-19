@@ -41,7 +41,7 @@
     "eslint-plugin-react": "^7.12.4",
     "prettier": "^1.16.4"
   },
-  "toolchain": {
+  "volta": {
     "node": "10.15.1",
     "yarn": "1.13.0"
   }
