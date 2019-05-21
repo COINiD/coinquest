@@ -15,17 +15,27 @@ $logo-margin: 134px;
     background-position: right bottom;
     background-repeat: no-repeat;
 
+    &__list,
     &__copy {
       max-width: 75%;
     }
   }
 
-  &__copy {
+  &__copy,
+  &__list-item {
     font-size: $font-size-small;
 
     a {
       color: $black;
     }
+  }
+
+  &__list {
+    padding-left: 25px;
+  }
+
+  &__list-item {
+    margin-bottom: $space-xl;
   }
 
   &__downloads {
