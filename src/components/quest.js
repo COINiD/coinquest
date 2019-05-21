@@ -9,7 +9,7 @@ import WalletButton from "./wallet-button";
 export default class QuestListItem extends PureComponent {
   render() {
     let { completed, quest, withRiddles } = this.props;
-    let { id, description, title, reward, ticker, privateKey, riddles } = quest;
+    let { id, description, title, reward, ticker, riddles } = quest;
 
     let classes = classnames("quest", `quest--${id}`, `quest--${ticker}`);
 
@@ -21,7 +21,7 @@ export default class QuestListItem extends PureComponent {
           <p className="quest__description">{description}</p>
           {withRiddles && <Riddles riddles={riddles} />}
           <p className="quest__side quest__side--mobile">
-            <Qr privateKey={privateKey} />
+            <Qr id={id} />
             Private key
           </p>
           <h4 className="quest__download-title">
@@ -33,7 +33,7 @@ export default class QuestListItem extends PureComponent {
           </div>
         </div>
         <p className="quest__side quest__side--desktop">
-          <Qr privateKey={privateKey} />
+          <Qr id={id} />
           Private key
         </p>
       </div>

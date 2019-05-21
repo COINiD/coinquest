@@ -2,9 +2,9 @@ $action-margin-desktop: 55px;
 $riddle-image-size-desktop: 105px;
 $riddle-image-size-mobile: 96px;
 $reward-padding: 20px;
-$qr-padding: 15px;
+$qr-padding: 12px;
 $side-padding: 56px;
-$side-width: 162px;
+$side-width: 224px;
 
 $icon-size: 20px;
 
@@ -27,7 +27,8 @@ $margin-bottom: 104px;
 
     @include media(medium) {
       padding-left: $side-padding;
-      max-width: $side-padding + $side-width;
+      max-width: none;
+      width: $side-padding + $side-width;
     }
 
     &--mobile {
@@ -67,9 +68,6 @@ $margin-bottom: 104px;
   }
 
   &__qr {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     border-radius: $base-border-radius;
     background-color: $white;
     padding: $qr-padding;
@@ -85,6 +83,12 @@ $margin-bottom: 104px;
 
     &--cell-filled {
       fill: $black;
+    }
+
+    @include media(medium) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 

@@ -8,8 +8,8 @@ class Page extends PureComponent {
   render() {
     let { activeQuests, completedQuests, questId } = this.props;
 
-    let active = find(activeQuests, { address: questId });
-    let completed = find(completedQuests, { address: questId });
+    let active = find(activeQuests, { code: questId });
+    let completed = find(completedQuests, { code: questId });
 
     let quest = active || completed;
     if (!quest) {
