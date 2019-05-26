@@ -28,7 +28,12 @@ const Footer = () => (
           Hint will lead you to a quest page where you find the riddles.
         </li>
         <li className="footer__list-item">
-          Solve the riddles to get the password
+          Solve the riddles to get the password.
+        </li>
+        <li className="footer__list-item">
+          Try the password using <i>Sweep private key</i> in COINiD Wallet and
+          if its correct and you are first the coins will be sweeped to your
+          wallet!
         </li>
       </ol>
       <p className="footer__downloads">
