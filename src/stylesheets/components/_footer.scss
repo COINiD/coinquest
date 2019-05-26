@@ -43,6 +43,7 @@ $logo-margin: 134px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: $space-xl * 2;
 
     .wallet-btn + .wallet-btn {
       margin-top: 12px;
@@ -61,7 +62,7 @@ $logo-margin: 134px;
   &__logo {
     display: flex;
     justify-content: center;
-    margin: $space-l 0 $space-xxl;
+    margin: $space-xl * 2 0;
   }
 
   &__bg {
