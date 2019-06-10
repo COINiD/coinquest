@@ -134,8 +134,42 @@ $margin-bottom: 104px;
     }
   }
 
+  &__address,
+  &__download {
+    font-size: $font-size-mini;
+
+    @include media(medium) {
+      font-size: $font-size-tiny;
+    }
+  }
+
+  &__address {
+    &__title {
+      flex: 1;
+    }
+    @include media(medium) {
+      .quest__address__title {
+        flex: 0;
+      }
+    }
+  }
+
   &__download {
     display: flex;
+    flex-flow: wrap;
+    align-items: center;
+
+    &__title {
+      margin-right: $space-s;
+      margin-bottom: $space-s;
+      width: 100%;
+    }
+    @include media(medium) {
+      .quest__download__title {
+        margin-bottom: 0;
+        width: auto;
+      }
+    }
   }
 
   &__riddles {
@@ -223,6 +257,7 @@ $margin-bottom: 104px;
 
   &--XMY {
     .quest {
+      &__address__link,
       &__title,
       &__download-title {
         color: $pink;
