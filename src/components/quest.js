@@ -16,14 +16,13 @@ export default class QuestListItem extends PureComponent {
     return (
       <div className={classes} id={`quest-${id}`}>
         <div className="quest__content">
-          <h2 className="quest__title">{title}</h2>
+          <div className="quest__header">
+            <h2 className="quest__title">{title}</h2>
+            <Qr id={id} />
+          </div>
           <Reward reward={reward} ticker={ticker} completed={completed} />
           <p className="quest__description">{description}</p>
           {withRiddles && <Riddles riddles={riddles} />}
-          <p className="quest__side quest__side--mobile">
-            <Qr id={id} />
-            Private key
-          </p>
           <h4 className="quest__download-title">
             Download {coinNames[ticker]} Wallet
           </h4>
@@ -32,10 +31,6 @@ export default class QuestListItem extends PureComponent {
             <WalletButton ticker={ticker} system="ios" />
           </div>
         </div>
-        <p className="quest__side quest__side--desktop">
-          <Qr id={id} />
-          Private key
-        </p>
       </div>
     );
   }
