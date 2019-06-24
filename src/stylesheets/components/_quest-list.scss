@@ -1,16 +1,1 @@
-.quest-list {
-  &__title {
-    font-weight: normal;
-    text-align: center;
-
-    @include media(medium) {
-      text-align: left;
-    }
-  }
-
-  &--completed {
-    .quest-list__title {
-      color: $slight-gray;
-    }
-  }
-}
+.quest-list {}

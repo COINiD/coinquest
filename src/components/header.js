@@ -47,16 +47,6 @@ export default class Header extends PureComponent {
           Follow the clues, solve riddles and earn cryptocurrency. Only one can
           be first, will it be you?
         </p>
-        <a href="#quests" className="header__button">
-          <span>View quests</span>
-          <img
-            src={iconChevronsDown}
-            alt="Quests"
-            title="View quests"
-            className="header__button__icon"
-            rel="preload"
-          />
-        </a>
       </>
     );
   };

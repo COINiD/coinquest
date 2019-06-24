@@ -7,7 +7,7 @@ class Page extends PureComponent {
     let { activeQuests } = this.props;
     return (
       <div className="quests u-padding-top" id="quests">
-        <QuestList title="Active quest" quests={activeQuests} />
+        <QuestList quests={activeQuests} />
       </div>
     );
   }
