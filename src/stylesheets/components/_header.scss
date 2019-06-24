@@ -2,7 +2,7 @@ $top-padding-mobile: 234px;
 $top-padding-desktop: 224px;
 $button-margin-mobile: $space-xxl * 5;
 $button-margin-desktop: $space-xxl;
-$header-height: 893px;
+$header-height: 450px;
 $top-padding-simple: 32px;
 $bottom-padding-simple: 64px;
 
@@ -15,12 +15,6 @@ $bottom-padding-simple: 64px;
     padding-top: $top-padding-desktop;
   }
 
-  &--loading {
-    .header__button {
-      opacity: 0;
-    }
-  }
-
   &--simple {
     padding: $top-padding-simple 0 $bottom-padding-simple;
     min-height: 0;
@@ -29,26 +23,6 @@ $bottom-padding-simple: 64px;
   .wrapper {
     z-index: 100;
     position: relative;
-  }
-
-  &__button {
-    opacity: 1;
-    transition: opacity 0.25s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: $button-margin-mobile;
-    padding: $space-s;
-    font-size: $font-size-tiny;
-
-    @include media(medium) {
-      margin-top: $button-margin-desktop;
-    }
-
-    &__icon {
-      margin-top: $space-s;
-    }
   }
 
   &__bg {
