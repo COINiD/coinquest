@@ -8,7 +8,7 @@ export default [
       "Scan the QR code with sweep in COINiD Wallet for Myriad to access the quest",
     fullDescription: "",
     ticker: "XMY",
-    reward: "999",
+    reward: null,
     qrImage: null,
     riddles: [
       {

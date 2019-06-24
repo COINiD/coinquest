@@ -29,7 +29,7 @@ export default function withQuests(WrappedComponent, simpleHeader) {
             const addressStatus = find(addressStatuses, address => {
               return address.addrStr === quest.address;
             });
-
+            quest.reward = addressStatus.balance;
             return Number(addressStatus.balance) <= 0;
           });
 
