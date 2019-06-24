@@ -5,6 +5,7 @@ const Qr = ({ id }) => (
       src={require(`../../images/quests/q${id}qr.svg`)}
       alt="private key"
       title="Scan with COINiD Wallet"
+      className="quest__qr__image"
     />
   </div>
 );
