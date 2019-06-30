@@ -40,6 +40,8 @@ $margin-bottom: 104px;
       padding-top: $reward-padding;
     }
 
+    margin-bottom: 8px;
+
     border-radius: $base-border-radius;
     background-color: $dark-gray;
     max-width: 100%;
@@ -63,6 +65,10 @@ $margin-bottom: 104px;
     @include media(medium) {
       text-align: left;
     }
+  }
+
+  &__fiat-value {
+    font-size: $font-size-supertiny;
   }
 
   &__qr {

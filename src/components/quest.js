@@ -3,6 +3,7 @@ import classnames from "classnames";
 import { coinNames, coinUrls, insights } from "../config/constants";
 import Reward from "./quest/reward";
 import Riddles from "./quest/riddles";
+import FiatValue from "./quest/fiat-value";
 import Qr from "./quest/qr";
 import WalletButton from "./wallet-button";
 
@@ -22,6 +23,7 @@ export default class QuestListItem extends PureComponent {
             <Qr id={id} />
           </div>
           <Reward reward={reward} ticker={ticker} completed={completed} />
+          <FiatValue reward={reward} ticker={ticker} />
           <p className="quest__description">{description}</p>
           {withRiddles && <Riddles riddles={riddles} />}
           <p className="quest__address">
