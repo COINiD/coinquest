@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import classnames from "classnames";
-import { coinNames, insights } from "../config/constants";
+import { coinNames, coinUrls, insights } from "../config/constants";
 import Reward from "./quest/reward";
 import Riddles from "./quest/riddles";
 import Qr from "./quest/qr";
@@ -13,7 +13,7 @@ export default class QuestListItem extends PureComponent {
     let prizeUrl = insights[ticker];
     let url = prizeUrl + "/address/" + address;
     let classes = classnames("quest", `quest--${id}`, `quest--${ticker}`);
-
+    let coinUrl = `https://${coinUrls[ticker]}`;
     return (
       <div className={classes} id={`quest-${id}`}>
         <div className="quest__content">
@@ -35,6 +35,22 @@ export default class QuestListItem extends PureComponent {
               {address}
             </a>
           </p>
+          <div className="quest__coin">
+            <img
+              src={require("../images/coins/" + ticker + ".svg")}
+              alt={coinNames[ticker]}
+              className="quest__coin__logo"
+            />
+            <div className="quest__coin__name">
+              <h4 className="quest__coin__title">Partnering coin</h4>
+              <p className="quest__coin__link">
+                {coinNames[ticker]}&nbsp;
+                <a href={coinUrl} target="_blank" rel="noopener noreferrer">
+                  {coinUrls[ticker]}
+                </a>
+              </p>
+            </div>
+          </div>
           <div className="quest__download">
             <span className="quest__download__title">
               Download {coinNames[ticker]} Wallet

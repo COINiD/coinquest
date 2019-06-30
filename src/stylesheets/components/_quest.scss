@@ -19,7 +19,6 @@ $margin-bottom: 104px;
       justify-content: space-between;
       flex-direction: row;
       align-items: flex-end;
-
     }
 
     display: flex;
@@ -32,7 +31,7 @@ $margin-bottom: 104px;
 
   &__title {
     @include media(medium) {
-      margin-bottom: $space-l+55px;
+      margin-bottom: $space-l + 55px;
     }
   }
 
@@ -44,7 +43,8 @@ $margin-bottom: 104px;
     border-radius: $base-border-radius;
     background-color: $dark-gray;
     max-width: 100%;
-    padding: $reward-padding+35px $reward-padding $reward-padding $reward-padding;
+    padding: $reward-padding + 35px $reward-padding $reward-padding
+      $reward-padding;
     font-weight: bold;
     color: $black;
     text-align: center;
@@ -249,6 +249,30 @@ $margin-bottom: 104px;
     }
   }
 
+  &__coin {
+    max-width: 580px;
+    border: 1px solid $white;
+    border-radius: 8px;
+    display: flex;
+    padding: 20px;
+    margin-bottom: $space-xxl;
+
+    &__logo {
+      margin-right: 20px;
+    }
+
+    &__title,
+    &__link {
+      margin: 0;
+      padding: 0;
+      font-size: $font-size-tiny;
+    }
+
+    &__title {
+      font-weight: bold;
+    }
+  }
+
   &--completed {
     .quest {
       &__title {
@@ -264,7 +288,8 @@ $margin-bottom: 104px;
     .quest {
       &__address__link,
       &__title,
-      &__download-title {
+      &__download-title,
+      &__coin__link a {
         color: $pink;
       }
       &__reward {

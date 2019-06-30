@@ -9,6 +9,12 @@ export const coinNames = {
   XMY: "Myriad"
 };
 
+export const coinUrls = {
+  BTC: "bitcoin.org",
+  GRS: "groestlcoin.org",
+  XMY: "myriadcoin.org"
+};
+
 export const walletUrls = {
   ALL: {
     android: "https://play.google.com/store/apps/developer?id=COINiD+Group",
