@@ -28,8 +28,6 @@ const Layout = ({ children, title, theme, isLoading, simpleHeader }) => {
         <meta property="og:image" content="https://coinid.org/logo.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-        <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
         <link
           rel="preload"
           href="https://rsms.me/inter/inter-ui.css"
