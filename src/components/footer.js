@@ -1,7 +1,7 @@
 import React from "react";
 import WalletButton from "../components/wallet-button";
 import logo from "../images/coinid-logo.svg";
-import footerBg from "../images/footer-bg.png";
+import footerBg from "../images/footer-bg-1.png";
 
 const Footer = () => (
   <footer className="footer">
