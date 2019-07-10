@@ -9,8 +9,17 @@ import WalletButton from "./wallet-button";
 
 export default class QuestListItem extends PureComponent {
   render() {
-    let { completed, quest, withRiddles } = this.props;
-    let { address, id, description, title, reward, ticker, riddles } = quest;
+    let { completed, quest, withRiddles, useFullDesc } = this.props;
+    let {
+      address,
+      id,
+      description,
+      fullDescription,
+      title,
+      reward,
+      ticker,
+      riddles
+    } = quest;
     let prizeUrl = insights[ticker];
     let url = prizeUrl + "/address/" + address;
     let classes = classnames("quest", `quest--${id}`, `quest--${ticker}`);
@@ -24,7 +33,9 @@ export default class QuestListItem extends PureComponent {
           </div>
           <Reward reward={reward} ticker={ticker} completed={completed} />
           <FiatValue reward={reward} ticker={ticker} />
-          <p className="quest__description">{description}</p>
+          <p className="quest__description">
+            {useFullDesc ? fullDescription : description}
+          </p>
           {withRiddles && <Riddles riddles={riddles} />}
           <p className="quest__address">
             <span className="quest__address__title">Prize address: </span>

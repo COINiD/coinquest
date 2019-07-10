@@ -23,6 +23,7 @@ class Page extends PureComponent {
           quests={[quest]}
           withRiddles={true}
           completed={completed}
+          useFullDesc={true}
         />
       </div>
     );
