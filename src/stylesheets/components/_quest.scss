@@ -186,6 +186,7 @@ $margin-bottom: 104px;
   &__riddles {
     display: flex;
     justify-content: space-between;
+    margin-bottom: $space-xxl;
 
     @include media(medium) {
       justify-content: flex-start;
@@ -200,11 +201,16 @@ $margin-bottom: 104px;
     color: $white;
     border: none;
     background-color: transparent;
-    cursor: pointer;
+    padding: 0;
+    cursor: default;
 
-    &:hover {
-      opacity: 0.7;
-      text-decoration: none;
+    &--active {
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.7;
+        text-decoration: none;
+      }
     }
 
     @include media(medium) {
@@ -229,6 +235,7 @@ $margin-bottom: 104px;
       margin: $space-base 0 $space-xxs;
       font-size: $font-size-small;
       font-weight: normal;
+      text-align: left;
 
       &__no {
         display: none;
@@ -252,6 +259,15 @@ $margin-bottom: 104px;
       @include media(medium) {
         font-size: $font-size-small;
       }
+    }
+
+    &__empty {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: $font-size-mini;
+      text-align: center;
+      height: 100%;
     }
   }
 

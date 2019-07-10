@@ -17,7 +17,7 @@ export default class FiatValue extends PureComponent {
   apiUrl = "https://min-api.cryptocompare.com/data";
 
   fetchFromPriceApi = (ticker, amount) => {
-    const url = `${this.apiUrl}/` + "price" + `?fsym=${ticker}&tsyms=USD`;
+    const url = `${this.apiUrl}/price?fsym=${ticker}&tsyms=USD`;
 
     return fetch(url)
       .then(r => r.json())

@@ -29,7 +29,7 @@ const Layout = ({ children, title, theme, isLoading, simpleHeader }) => {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <link
-          rel="preload"
+          rel="prefetch"
           href="https://rsms.me/inter/inter-ui.css"
           as="style"
         />

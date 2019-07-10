@@ -1,6 +1,5 @@
 import React, { PureComponent } from "react";
 import Lightbox from "react-images";
-const imageComingSoon = require(`../../images/quests/coming-soon.jpg`);
 
 export default class Riddles extends PureComponent {
   constructor(props) {
@@ -16,19 +15,18 @@ export default class Riddles extends PureComponent {
   }
 
   imageList = riddles => {
-    return riddles.map((riddle, index) => {
-      if (riddle) {
-        return {
-          src: require(`../../images/quests/${riddle.image}`),
-          caption: riddle.riddle
-        };
-      } else {
-        return {
-          src: imageComingSoon,
-          caption: `Riddle no.${index + 1} - Coming soon`
-        };
-      }
-    });
+    return riddles
+      .map(riddle => {
+        if (riddle) {
+          return {
+            src: require(`../../images/quests/${riddle.image}`),
+            caption: riddle.riddle
+          };
+        } else {
+          return null;
+        }
+      })
+      .filter(Boolean);
   };
 
   gotoPrevious() {
@@ -51,28 +49,35 @@ export default class Riddles extends PureComponent {
     this.setState({ lightboxIsOpen: false });
   }
 
+  renderImage(riddle) {
+    if (riddle && riddle.image) {
+      return (
+        <img
+          src={require(`../../images/quests/${riddle.image}`)}
+          alt={riddle.hint}
+        />
+      );
+    } else {
+      return (
+        <span className="quest__riddle__empty">
+          Coming
+          <br />
+          soon
+        </span>
+      );
+    }
+  }
+
   renderRiddle = (riddle, index) => {
     return (
       <button
-        className="quest__riddle"
+        className={`quest__riddle ${riddle && "quest__riddle--active"}`}
         key={`riddle-${index}`}
-        onClick={() => this.openLightbox(index)}
+        onClick={() => (riddle ? this.openLightbox(index) : null)}
+        disabled={!riddle}
       >
-        <div className="quest__riddle__image">
-          {riddle && riddle.image && (
-            <img
-              src={require(`../../images/quests/${riddle.image}`)}
-              alt={riddle.hint}
-            />
-          )}
-        </div>
-        <h3 className="quest__riddle__title">
-          Riddle <span className="quest__riddle__title__no">no.</span>
-          {index + 1}
-        </h3>
-        {riddle === null && (
-          <p className="quest__riddle__unknown">Coming soon</p>
-        )}
+        <div className="quest__riddle__image">{this.renderImage(riddle)}</div>
+        <h3 className="quest__riddle__title">Riddle {index + 1}</h3>
       </button>
     );
   };

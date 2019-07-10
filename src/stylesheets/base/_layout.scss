@@ -64,3 +64,8 @@ body {
 .u-margin-bottom {
   margin-bottom: $space-xxl * 3;
 }
+
+.loading {
+  margin: $space-xxl 0 $space-xxl * 3;
+  text-align: center;
+}
