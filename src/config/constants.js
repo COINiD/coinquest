@@ -15,6 +15,8 @@ export const coinUrls = {
   XMY: "myriadcoin.org"
 };
 
+export const googleAnalyticsId = "UA-113832424-2";
+
 export const walletUrls = {
   ALL: {
     android: "https://play.google.com/store/apps/developer?id=COINiD+Group",
