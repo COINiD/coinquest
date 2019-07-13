@@ -17,7 +17,10 @@ export default [
         riddle:
           "When endeavour and resourcefulness meet poverty, a child is born."
       },
-      null,
+      {
+        image: "q1r2.png",
+        riddle: "How many pieces do you have to rotate in order to solve this?"
+      },
       null
     ]
   }
