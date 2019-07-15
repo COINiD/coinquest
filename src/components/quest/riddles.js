@@ -52,18 +52,24 @@ export default class Riddles extends PureComponent {
   renderImage(riddle) {
     if (riddle && riddle.image) {
       return (
-        <img
-          src={require(`../../images/quests/${riddle.image}`)}
-          alt={riddle.hint}
+        <div
+          className="quest__riddle__image"
+          style={{
+            backgroundImage: `url(${require(`../../images/quests/${
+              riddle.image
+            }`)})`
+          }}
         />
       );
     } else {
       return (
-        <span className="quest__riddle__empty">
-          Coming
-          <br />
-          soon
-        </span>
+        <div className="quest__riddle__image">
+          <span className="quest__riddle__empty">
+            Coming
+            <br />
+            soon
+          </span>
+        </div>
       );
     }
   }
@@ -76,7 +82,7 @@ export default class Riddles extends PureComponent {
         onClick={() => (riddle ? this.openLightbox(index) : null)}
         disabled={!riddle}
       >
-        <div className="quest__riddle__image">{this.renderImage(riddle)}</div>
+        {this.renderImage(riddle)}
         <h3 className="quest__riddle__title">Riddle {index + 1}</h3>
       </button>
     );

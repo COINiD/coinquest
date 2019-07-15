@@ -21,7 +21,10 @@ export default [
         image: "q1r2.png",
         riddle: "How many pieces do you have to rotate in order to solve this?"
       },
-      null
+      {
+        image: "q1r3.jpg",
+        riddle: "What is the color of the bottle without edges?"
+      }
     ]
   }
 ];

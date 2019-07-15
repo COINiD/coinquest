@@ -224,6 +224,7 @@ $margin-bottom: 104px;
       height: $riddle-image-size-mobile;
       background-color: $secondary-background-color;
       overflow: hidden;
+      background-size: cover;
 
       @include media(medium) {
         width: $riddle-image-size-desktop;
