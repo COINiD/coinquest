@@ -18,7 +18,8 @@ export default class QuestListItem extends PureComponent {
       title,
       reward,
       ticker,
-      riddles
+      riddles,
+      riddleHint
     } = quest;
     let prizeUrl = insights[ticker];
     let url = prizeUrl + "/address/" + address;
@@ -36,7 +37,7 @@ export default class QuestListItem extends PureComponent {
           <p className="quest__description">
             {useFullDesc ? fullDescription : description}
           </p>
-          {withRiddles && <Riddles riddles={riddles} />}
+          {withRiddles && <Riddles riddles={riddles} hint={riddleHint} />}
           <p className="quest__address">
             <span className="quest__address__title">Prize address: </span>
             <a

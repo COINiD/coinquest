@@ -15,7 +15,7 @@ export default [
       {
         image: "q1r1.jpg",
         riddle:
-          "When endeavour and resourcefulness meet poverty, a child is born."
+          "When endeavour and resourcefulness meet poverty, a child is born. (The image is not relevant to the riddle)"
       },
       {
         image: "q1r2.png",
@@ -23,8 +23,11 @@ export default [
       },
       {
         image: "q1r3.jpg",
-        riddle: "What is the color of the bottle without edges?"
+        riddle:
+          "What is the color of the bottle without edges? (The image is not relevant to the riddle)"
       }
-    ]
+    ],
+    riddleHint:
+      "Each riddle has a single word as the answer. The three words together in lower case make up the password."
   }
 ];

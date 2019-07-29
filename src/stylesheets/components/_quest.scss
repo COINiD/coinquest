@@ -186,10 +186,18 @@ $margin-bottom: 104px;
   &__riddles {
     display: flex;
     justify-content: space-between;
-    margin-bottom: $space-xxl;
+
+    margin-bottom: $space-xl;
 
     @include media(medium) {
       justify-content: flex-start;
+    }
+
+    &__hint {
+      font-style: italic;
+      font-size: $font-size-mini;
+      margin-bottom: $space-xxl;
+      max-width: 485px;
     }
   }
 

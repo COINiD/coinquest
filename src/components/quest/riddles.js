@@ -5,7 +5,7 @@ export default class Riddles extends PureComponent {
   constructor(props) {
     super(props);
 
-    let { riddles } = props;
+    let { riddles, hint } = props;
 
     this.state = {
       lightboxIsOpen: false,
@@ -89,21 +89,24 @@ export default class Riddles extends PureComponent {
   };
   render() {
     let { lightboxIsOpen, currentImage, images } = this.state;
-    let { riddles } = this.props;
+    let { riddles, hint } = this.props;
     return (
-      <div className="quest__riddles">
-        {riddles.map((riddle, index) => this.renderRiddle(riddle, index))}
-        <Lightbox
-          images={images}
-          isOpen={lightboxIsOpen}
-          currentImage={currentImage}
-          onClickPrev={() => this.gotoPrevious()}
-          onClickNext={() => this.gotoNext()}
-          onClose={() => this.closeLightbox()}
-          backdropClosesModal={true}
-          width={768}
-          showImageCount={false}
-        />
+      <div>
+        <div className="quest__riddles">
+          {riddles.map((riddle, index) => this.renderRiddle(riddle, index))}
+          <Lightbox
+            images={images}
+            isOpen={lightboxIsOpen}
+            currentImage={currentImage}
+            onClickPrev={() => this.gotoPrevious()}
+            onClickNext={() => this.gotoNext()}
+            onClose={() => this.closeLightbox()}
+            backdropClosesModal={true}
+            width={768}
+            showImageCount={false}
+          />
+        </div>
+        {hint && <p className="quest__riddles__hint">{hint}</p>}
       </div>
     );
   }
