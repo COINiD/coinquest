@@ -13,18 +13,16 @@ export default [
     qrImage: null,
     riddles: [
       {
-        image: "q1r1.jpg",
-        riddle:
-          "When endeavour and resourcefulness meet poverty, a child is born. (The image is not relevant to the riddle)"
+        image: "q1r1.png",
+        riddle: "(The image is not relevant to the riddle)"
       },
       {
         image: "q1r2.png",
-        riddle: "How many pieces do you have to rotate in order to solve this?"
+        riddle: null
       },
       {
-        image: "q1r3.jpg",
-        riddle:
-          "What is the color of the bottle without edges? (The image is not relevant to the riddle)"
+        image: "q1r3.png",
+        riddle: "(The image is not relevant to the riddle)"
       }
     ],
     riddleHint:
