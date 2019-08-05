@@ -14,7 +14,7 @@ export default [
     riddles: [
       {
         image: "q1r1.png",
-        riddle: "(The image is not relevant to the riddle)"
+        riddle: null
       },
       {
         image: "q1r2.png",
@@ -22,7 +22,7 @@ export default [
       },
       {
         image: "q1r3.png",
-        riddle: "(The image is not relevant to the riddle)"
+        riddle: null
       }
     ],
     riddleHint:
